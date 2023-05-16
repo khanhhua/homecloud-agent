@@ -1,6 +1,5 @@
 package com.fatmandesigner.homecloudagent;
 
-import org.apache.commons.logging.Log;
 import org.apache.ftpserver.FtpServer;
 import org.apache.ftpserver.FtpServerFactory;
 import org.apache.ftpserver.ftplet.FtpException;
@@ -14,9 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.Properties;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -98,7 +95,7 @@ public final class HomeCloudAgent {
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
-                System.out.println("Shuting down FTP server...");
+                System.out.println("Shutting down FTP server...");
                 agent.server.stop();
             }
         });
